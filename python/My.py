@@ -1,16 +1,21 @@
 import numpy as np
 import json
+import shutil
 from pdb import set_trace as bp
 from pathlib import Path
 from tqdm import tqdm
 from skimage import measure, io
 from shapely.geometry import Polygon, MultiPolygon
 from PIL import Image
+import os
+from os import listdir
 
 
-def my_function(s, dataset):
-    name = 'C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/masks/' + dataset + '/image_005_'
-    name+=s
+
+FinalStr = ""
+
+def my_function(dataset, videoNum, CurrentFrame):
+    name = 'C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/masks/' + dataset + '/image_00' + videoNum + '_' + CurrentFrame
     im = Image.open(name)
     pixelMap = im.load()
 
@@ -26,101 +31,86 @@ def my_function(s, dataset):
     img.save(name)
     img.close()
 
-
-def main():
-    dataset = input()
-    ImgStr = """
-            "MyImages/""" + dataset + """21/image_005_"""
-    MaskStr = """
-            {
-                "mask": "masks/""" + dataset + """/image_005_"""
+def main(datasetArr, videoNumArr, imgNumArr):
     s = """
+{
+    "masks":
     {
-        "masks":
-        {
-    """
-
-    count = int(input())
-
-    for i in range(count):
-        a = ""
-        s += ImgStr
-
-        
-        if i < 10:
-            a+='000'
-        if i < 100 and i >= 10:
-            a += '00'
-        if i < 1000 and i >= 100:
-            a+='0'
-        
-
-        a+=str(i) + '.png'
-        s+=a + '":'
-        my_function(a, dataset)
-        a = ""
-        s+= MaskStr
-
-        
-        if i < 10:
-            a='000'
-        if i < 100 and i >= 10:
-            a = '00'
-        if i < 1000 and i >= 100:
-            a='0'
-        
-
-        s+=a + str(i) + '.png",'
-        a = ""
-        s+="""
-                "color_categories":
-                {
-                    "(0, 255, 0)": {"category": "patient", "super_category": "humans"}
-                }
-            },
         """
-    a = ""
-    s += ImgStr
+    for idx in range(len(datasetArr)):
+        dataset = datasetArr[idx]
+        imgNum = imgNumArr[idx]
+        ImgStr = """
+        "MyImages/""" + dataset + """/image_00""" + imgNum + """_"""
+        MaskStr = """
+        {
+            "mask": "masks/""" + dataset +"""/image_00""" + imgNum + """_"""
+        counter = int(imgNum)
+        for i in range(counter+1):
+            a = ""
+            s += ImgStr
 
-    if count < 10:
-        a+='000'
-    if count < 100 and count >= 10:
-        a += '00'
-    if count < 1000 and count >= 100:
-        a+='0'
+            
+            if i < 10:
+                a+='000'
+            if i < 100 and i >= 10:
+                a += '00'
+            if i < 1000 and i >= 100:
+                a+='0'
+            
 
-    a += str(count) + '.png'
-    s += a + '":'
-    my_function(a, dataset)
-    a = ""
-    s+= MaskStr
+            a+=str(i) + '.png'
+            s+=a + '":'
+            my_function(dataset, videoNumArr, a)
+            a = ""
+            s+= MaskStr
 
-    if count < 10:
-        a='000'
-    if count < 100 and count >= 10:
-        a = '00'
-    if count < 1000 and count >= 100:
-        a='0'
-    
+            
+            if i < 10:
+                a='000'
+            if i < 100 and i >= 10:
+                a = '00'
+            if i < 1000 and i >= 100:
+                a='0'
+            
 
-    s+=a + str(count) + '.png",'
-    a = ""
-    s+="""
-                "color_categories":
-                {
-                    "(0, 255, 0)": {"category": "patient", "super_category": "humans"}
-                }
+            s+=a + str(i) + '.png",'
+            s+="""
+            "color_categories":
+            {
+                "(0, 255, 0)": {"category": "patient", "super_category": "humans"}
             }
-        },
-        """
-    s+= """
-        "super_categories":
-        {
-            "humans": ["patient"]
-        }
-    }
-    """
-    f = open('C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/mask_definitions.json', 'w')
-    f.write(s)
+        }"""
+            if i < counter:
+                s+= """,
+                """
+        if idx < len(datasetArr)-1:
+            s+= """,
+                """
+        ImgStr = ""
+        MaskStr = ""
+    return s
+datasetArr = []
+videoNumArr = []
+imgNumArr = []
+while True:
+    dataset = input()
+    if dataset == "0":
+        break
+    videoNum = input()
+    imgNum = str(len(os.listdir("C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/MyImages/" + dataset + "/")))
+    datasetArr.append(dataset)
+    videoNumArr.append(videoNum)
+    imgNumArr.append(imgNum)
+FinalStr = main(datasetArr, videoNumArr, imgNumArr)
+FinalStr += """
+    },
 
-main()
+    "super_categories":
+    {
+        "humans": ["patient"]
+    }
+}
+        """
+f = open('C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/mask_definitions.json', 'w')
+f.write(FinalStr)
