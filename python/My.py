@@ -31,7 +31,7 @@ def my_function(dataset, videoNum, CurrentFrame):
     img.save(name)
     img.close()
 
-def main(datasetArr, videoNumArr, imgNumArr):
+def main(datasetArr, videoNumArr, imgNumArr, imgNamesArray):
     s = """
 {
     "masks":
@@ -46,7 +46,8 @@ def main(datasetArr, videoNumArr, imgNumArr):
         {
             "mask": "masks/""" + dataset +"""/image_00""" + imgNum + """_"""
         counter = int(imgNum)
-        for i in range(counter+1):
+        for k in imgNamesArray:
+            i = int(k[k.find('_', 6)+1:k.find('.')])
             a = ""
             s += ImgStr
 
@@ -61,7 +62,7 @@ def main(datasetArr, videoNumArr, imgNumArr):
 
             a+=str(i) + '.png'
             s+=a + '":'
-            my_function(dataset, videoNumArr, a)
+            my_function(dataset, videoNumArr[0], a)
             a = ""
             s+= MaskStr
 
@@ -90,27 +91,99 @@ def main(datasetArr, videoNumArr, imgNumArr):
         ImgStr = ""
         MaskStr = ""
     return s
-datasetArr = []
-videoNumArr = []
-imgNumArr = []
-while True:
-    dataset = input()
-    if dataset == "0":
-        break
-    videoNum = input()
-    imgNum = str(len(os.listdir("C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/MyImages/" + dataset + "/")))
-    datasetArr.append(dataset)
-    videoNumArr.append(videoNum)
-    imgNumArr.append(imgNum)
-FinalStr = main(datasetArr, videoNumArr, imgNumArr)
-FinalStr += """
-    },
 
-    "super_categories":
+
+def mainForEveryImage(imgNamesArray):
+    s = """
+{
+    "masks":
     {
-        "humans": ["patient"]
-    }
-}
         """
-f = open('C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/mask_definitions.json', 'w')
-f.write(FinalStr)
+    for idx in range(len(imgNamesArray)):
+        ImgStr = """
+        "MyImages/""" + dataset + """/image_00""" + imgNum + """_"""
+        MaskStr = """
+        {
+            "mask": "masks/""" + dataset + """/image_00""" + imgNum + """_"""
+        counter = int(imgNum)
+        for k in imgNamesArray:
+            i = int(k[k.find('_', 6) + 1:k.find('.')])
+            a = ""
+            s += ImgStr
+
+            if i < 10:
+                a += '000'
+            if i < 100 and i >= 10:
+                a += '00'
+            if i < 1000 and i >= 100:
+                a += '0'
+
+            a += str(i) + '.png'
+            s += a + '":'
+            my_function(dataset, videoNumArr[0], a)
+            a = ""
+            s += MaskStr
+
+            if i < 10:
+                a = '000'
+            if i < 100 and i >= 10:
+                a = '00'
+            if i < 1000 and i >= 100:
+                a = '0'
+
+            s += a + str(i) + '.png",'
+            s += """
+            "color_categories":
+            {
+                "(0, 255, 0)": {"category": "patient", "super_category": "humans"}
+            }
+        }"""
+            if i < counter:
+                s += """,
+                """
+        if idx < len(datasetArr) - 1:
+            s += """,
+                """
+        ImgStr = ""
+        MaskStr = ""
+    return s
+def My():
+    imgNamesArray = []
+    print("SortMode")
+    print("(0 - sort all, 1 - sort certain)")
+    choose = input()
+    if(choose == '0'):
+        print("Path name:")
+        dataset = input()
+        bufArray = []
+        with os.scandir("C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/MyImages/" + dataset + "/") as image:
+            for entry in image:
+                imgNamesArray.append(entry.name[entry.name.f])
+        datasetArr.append(dataset)
+        imgNumArr.append(str(len(os.listdir("C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/MyImages/" + dataset + "/"))))
+
+    if(choose == '1'):
+        while True:
+            print("Path name:")
+            dataset = input()
+            if dataset == "0":
+                break
+            print("Video number:")
+            videoNum = input()
+            imgNum = str(len(os.listdir("C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/MyImages/" + dataset + "/")))
+            datasetArr.append(dataset)
+            videoNumArr.append(videoNum)
+            imgNumArr.append(imgNum)
+    FinalStr = main(datasetArr, videoNumArr, imgNumArr, imgNamesArray)
+    FinalStr += """
+        },
+    
+        "super_categories":
+        {
+            "humans": ["patient"]
+        }
+    }
+            """
+    f = open('C:/Users/mrxst/Desktop/custom-object-detection-datasets-master/datasets/road-signs/mask_definitions.json', 'w')
+    f.write(FinalStr)
+My()
