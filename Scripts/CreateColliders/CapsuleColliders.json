@@ -1,0 +1,624 @@
+[
+    {
+        "SpineRadiusRatio": 1,
+        "SpineHeightRatio": 1,
+        "LegRadiusRatio": 1,
+        "LegHeightRatio": 1,
+        "HandRadiusRatio": 1,
+        "HandHeightRatio": 1,
+        "Parts": [
+            {
+                "bodyPart":  "mixamorig:LeftUpLeg",
+                "parentBodyPart": "mixamorig:Hips",
+                "center": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                },
+                "radius": 1,
+                "height": 6,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:LeftLeg",
+                "parentBodyPart": "mixamorig:LeftUpLeg",
+                "center": {
+                    "x": 0,
+                    "y": 2,
+                    "z": 0
+                },
+                "radius": 1,
+                "height": 6,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:LeftFoot",
+                "parentBodyPart": "mixamorig:LeftLeg",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 2.15,
+                "obiThickness": 0.01
+            },
+            {
+                "bodyPart":  "mixamorig:LeftToeBase",
+                "parentBodyPart": "mixamorig:LeftFoot",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.25,
+                "height": 1,
+                "obiThickness": 0.03
+            },
+            {
+                "bodyPart":  "mixamorig:LeftToe_End",
+                "parentBodyPart": "mixamorig:LeftToeBase",
+                "center": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 3.25,
+                "obiThickness": 0.03
+            },
+            {
+                "bodyPart":  "mixamorig:Spine",
+                "parentBodyPart": "mixamorig:Hips",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0.12
+                },
+                "radius": 1.5,
+                "height": 5.5,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:Spine1",
+                "parentBodyPart": "mixamorig:Spine",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 1.3,
+                "height": 1,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:Spine2",
+                "parentBodyPart": "mixamorig:Spine1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 1.3,
+                "height": 1,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:LeftShoulder",
+                "parentBodyPart": "mixamorig:Spine2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.6,
+                "height": 2,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:LeftArm",
+                "parentBodyPart": "mixamorig:LeftShoulder",
+                "center": {
+                    "x": 0,
+                    "y": 0.85,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 2.79,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:LeftForeArm",
+                "parentBodyPart": "mixamorig:LeftArm",
+                "center": {
+                    "x": 0,
+                    "y": 1.06,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 2.85,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHand",
+                "parentBodyPart": "mixamorig:LeftForeArm",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.35,
+                "height": 2.55,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandIndex1",
+                "parentBodyPart": "mixamorig:LeftHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandIndex2",
+                "parentBodyPart": "mixamorig:LeftHandIndex1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 1,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandIndex3",
+                "parentBodyPart": "mixamorig:LeftHandIndex2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandIndex4",
+                "parentBodyPart": "mixamorig:LeftHandIndex3",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandMiddle1",
+                "parentBodyPart": "mixamorig:LeftHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.4,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandMiddle2",
+                "parentBodyPart": "mixamorig:LeftHandMiddle1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.4,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandMiddle3",
+                "parentBodyPart": "mixamorig:LeftHandMiddle2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.4,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandPinky1",
+                "parentBodyPart": "mixamorig:LeftHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandPinky2",
+                "parentBodyPart": "mixamorig:LeftHandPinky1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandPinky3",
+                "parentBodyPart": "mixamorig:LeftHandPinky2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandPinky4",
+                "parentBodyPart": "mixamorig:LeftHandPinky3",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandThumb1",
+                "parentBodyPart": "mixamorig:LeftHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandThumb2",
+                "parentBodyPart": "mixamorig:LeftHandThumb1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandThumb3",
+                "parentBodyPart": "mixamorig:LeftHandThumb2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:LeftHandThumb4",
+                "parentBodyPart": "mixamorig:LeftHandThumb3",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightUpLeg",
+                "parentBodyPart": "mixamorig:Hips",
+                "center": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                },
+                "radius": 1,
+                "height": 6,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:RightLeg",
+                "parentBodyPart": "mixamorig:RightUpLeg",
+                "center": {
+                    "x": 0,
+                    "y": 2,
+                    "z": 0
+                },
+                "radius": 1,
+                "height": 6,
+                "obiThickness": 0.01
+            },
+            {
+                "bodyPart":  "mixamorig:RightFoot",
+                "parentBodyPart": "mixamorig:RightLeg",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 2.15,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:RightToeBase",
+                "parentBodyPart": "mixamorig:RightFoot",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.25,
+                "height": 1,
+                "obiThickness": 0.03
+            },
+            {
+                "bodyPart":  "mixamorig:RightToe_End",
+                "parentBodyPart": "mixamorig:RightToeBase",
+                "center": {
+                    "x": -0.4,
+                    "y": -1,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 3.25,
+                "obiThickness": 0.03
+            },
+            {
+                "bodyPart":  "mixamorig:RightShoulder",
+                "parentBodyPart": "mixamorig:Spine2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.6,
+                "height": 2,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:RightArm",
+                "parentBodyPart": "mixamorig:RightShoulder",
+                "center": {
+                    "x": 0,
+                    "y": 0.85,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 2.79,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:RightForeArm",
+                "parentBodyPart": "mixamorig:RightArm",
+                "center": {
+                    "x": 0,
+                    "y": 1.06,
+                    "z": 0
+                },
+                "radius": 0.5,
+                "height": 2.85,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:RightHand",
+                "parentBodyPart": "mixamorig:RightForeArm",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.35,
+                "height": 2.55,
+                "obiThickness": 0
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandIndex1",
+                "parentBodyPart": "mixamorig:RightHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandIndex2",
+                "parentBodyPart": "mixamorig:RightHandIndex1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 1,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandIndex3",
+                "parentBodyPart": "mixamorig:RightHandIndex2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandIndex4",
+                "parentBodyPart": "mixamorig:RightHandIndex3",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandMiddle1",
+                "parentBodyPart": "mixamorig:RightHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.4,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandMiddle2",
+                "parentBodyPart": "mixamorig:RightHandMiddle1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.4,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandMiddle3",
+                "parentBodyPart": "mixamorig:RightHandMiddle2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.4,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandPinky1",
+                "parentBodyPart": "mixamorig:RightHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandPinky2",
+                "parentBodyPart": "mixamorig:RightHandPinky1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandPinky3",
+                "parentBodyPart": "mixamorig:RightHandPinky2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandPinky4",
+                "parentBodyPart": "mixamorig:RightHandPinky3",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.1,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandThumb1",
+                "parentBodyPart": "mixamorig:RightHand",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandThumb2",
+                "parentBodyPart": "mixamorig:RightHandThumb1",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandThumb3",
+                "parentBodyPart": "mixamorig:RightHandThumb2",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            },
+            {
+                "bodyPart":  "mixamorig:RightHandThumb4",
+                "parentBodyPart": "mixamorig:RightHandThumb3",
+                "center": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "radius": 0.15,
+                "height": 0.5,
+                "obiThickness": 0.001
+            }
+        ]
+    }
+]
